@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartIcon } from "lucide-react";
+import Image from 'next/image';
 
 export default function Home() {
   const [step, setStep] = useState(0);
@@ -40,7 +41,7 @@ export default function Home() {
       setAnswers({ ...answers, [questions[step].key]: answer });
       setStep(step + 1);
     } else if (step === questions.length) {
-      setStep(step + 1); // Langsung ke langkah tanggal
+      setStep(step + 1); 
     }
   };
 
@@ -61,23 +62,23 @@ export default function Home() {
                 Will you go on a date with me? <HeartIcon className="inline-block text-red-500" />
               </>
             ) : step === 4 ? (
-              "It's a date!"
+              "It&apos;s a date!"
             ) : (
-              "Let's plan our perfect date!"
+              "Let&apos;s plan our perfect date!"
             )}
           </CardTitle>
           <CardDescription className="text-center">
             {step === 0
-              ? "I've prepared some questions to make it special for you."
+              ? "I&apos;ve prepared some questions to make it special for you."
               : step === 4
-              ? "I can't wait to spend time with you!"
+              ? "I can&apos;t wait to spend time with you!"
               : `Question ${step} of ${questions.length + 1}`}
           </CardDescription>
         </CardHeader>
         <CardContent>
           {step === 0 ? (
             <Button onClick={() => setStep(1)} className="w-full">
-              Yes, I'd love to!
+              Yes, I&apos;d love to!
             </Button>
           ) : step <= 3 ? (
             <div className="space-y-4">
@@ -103,12 +104,12 @@ export default function Home() {
             </div>
           ) : (
             <div className="space-y-4">
-              <p>Great! Here's a summary of our date:</p>
+              <p>Great! Here&apos;s a summary of our date:</p>
               <ul className="list-disc list-inside">
                 <li>Activity: {answers.activity}</li>
                 <li>Food: {answers.food}</li>
                 <li>Transportation: {answers.transport}</li>
-                <li>Date: {answers.date.toLocaleDateString()}</li>
+                <li>Date: {answers.date.toISOString().split('T')[0]}</li>
               </ul>
             </div>
           )}
@@ -118,7 +119,7 @@ export default function Home() {
             <Button onClick={() => setStep(0)} className="w-full mb-4">
               Start Over
             </Button>
-            <img src="love.jpg" alt="Flower" className="w-50 h-50" />
+            <Image src="/love.jpg" alt="Flower" width={100} height={100} />
           </CardFooter>
         )}
       </Card>
