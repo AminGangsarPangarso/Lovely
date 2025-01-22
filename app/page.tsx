@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, HeartIcon } from "lucide-react";
+import { HeartIcon } from "lucide-react";
 import Image from 'next/image';
 
 export default function Home() {
@@ -101,8 +101,6 @@ export default function Home() {
   onSelect={handleDateChange}
   className="rounded-md border"
 />
-
-
             </div>
           ) : (
             <div className="space-y-4">
