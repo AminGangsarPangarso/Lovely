@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -95,12 +94,7 @@ export default function Home() {
           ) : step === 4 ? (
             <div className="space-y-4">
               <h3 className="font-medium">When would you like to go?</h3>
-              {/* <Calendar
-  mode="single"
-  selected={answers.date}
-  onSelect={handleDateChange}
-  className="rounded-md border"
-/> */}
+
             </div>
           ) : (
             <div className="space-y-4">
