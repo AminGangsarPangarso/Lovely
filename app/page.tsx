@@ -44,12 +44,7 @@ export default function Home() {
     }
   };
 
-  const handleDateChange = (date: Date | undefined) => {
-    if (date) {
-      setAnswers({ ...answers, date });
-      setStep(step + 1);
-    }
-  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex items-center justify-center p-4">
