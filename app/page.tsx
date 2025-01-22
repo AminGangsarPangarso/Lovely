@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, HeartIcon } from "lucide-react";
 import Image from 'next/image';
 
 export default function Home() {
@@ -62,23 +62,23 @@ export default function Home() {
                 Will you go on a date with me? <HeartIcon className="inline-block text-red-500" />
               </>
             ) : step === 4 ? (
-              "It&apos;s a date!"
+              "Its a date!"
             ) : (
-              "Let&apos;s plan our perfect date!"
+              "Lets plan our perfect date!"
             )}
           </CardTitle>
           <CardDescription className="text-center">
             {step === 0
-              ? "I&apos;ve prepared some questions to make it special for you."
+              ? "Ive prepared some questions to make it special for you."
               : step === 4
-              ? "I can&apos;t wait to spend time with you!"
+              ? "I cant wait to spend time with you!"
               : `Question ${step} of ${questions.length + 1}`}
           </CardDescription>
         </CardHeader>
         <CardContent>
           {step === 0 ? (
             <Button onClick={() => setStep(1)} className="w-full">
-              Yes, I&apos;d love to!
+              Yes, Id love to!
             </Button>
           ) : step <= 3 ? (
             <div className="space-y-4">
@@ -96,15 +96,17 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="font-medium">When would you like to go?</h3>
               <Calendar
-                mode="single"
-                selected={answers.date}
-                onSelect={handleDateChange}
-                className="rounded-md border"
-              />
+  mode="single"
+  selected={answers.date}
+  onSelect={handleDateChange}
+  className="rounded-md border"
+/>
+
+
             </div>
           ) : (
             <div className="space-y-4">
-              <p>Great! Here&apos;s a summary of our date:</p>
+              <p>Great! Here a summary of our date:</p>
               <ul className="list-disc list-inside">
                 <li>Activity: {answers.activity}</li>
                 <li>Food: {answers.food}</li>
